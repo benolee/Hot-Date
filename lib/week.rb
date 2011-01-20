@@ -16,6 +16,11 @@ class Week
     end
   end
 
+  def [] day_of_week
+    raise "Only 7 days in a week dummy" if day_of_week > 7
+    @first_day.advance(:days => day_of_week - 1)
+  end
+
   def monday
     @first_day
   end
